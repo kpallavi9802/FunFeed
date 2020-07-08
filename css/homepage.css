@@ -1,0 +1,70 @@
+*{
+    text-decoration: none;
+    /* margin:0;
+    padding:0; */
+}
+
+body{
+    background-color: black;
+    
+}
+.carousel-caption{
+    margin-bottom: 20%;
+    padding:50px 100px;
+}
+#carouselCaptions{
+    padding-top:2px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.carousel-item{
+    height: 50%;
+    /* width: 50%;; */
+}
+
+#h1{
+    text-align: center;
+    margin-top:-10%;
+    color:Green;
+    font-weight:20px;
+    font-size: 60px;
+
+}
+/* img{
+    
+    width: ;
+    height: auto;
+} */
+
+.card-deck{
+    height: 30%;
+    width:30%;
+    padding:10px;
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+ /* unvisited link */
+ a:link {
+    color:cornflowerblue;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: blue;
+  }
+  
+  /* selected link */
+  a:active {
+    color:yellowgreen;
+  } 
