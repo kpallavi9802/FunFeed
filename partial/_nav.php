@@ -1,3 +1,4 @@
+<?php
 <nav class="navbar navbar-expand-md ">
     <a class="navbar-brand" href="#"
         style="color:#FFC312;font-size:30px;text-shadow: darksalmon;font-weight: bold;">FunFeed</a>
@@ -25,4 +26,5 @@
         </form>
     </div>
 </nav>
+?>
 <!-- navigation ends here -->
