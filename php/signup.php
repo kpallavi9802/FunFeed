@@ -30,7 +30,7 @@ $result = $conn->query($sql_query);
 // {
 // 	die("connection failed");
 // }
-
+    header("Location:../html/login.html");
  $conn->close();
 
 ?> 

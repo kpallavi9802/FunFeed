@@ -1,34 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
-
+*{
+    overflow: hidden;
+}
 body{
-/* background-image: url('../asset/back.jpg'); */
-background-size: auto;
+/* background-image: url('../asset/background.jpg'); */
+background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed; 
-background-position: center center;
+/* background-position:  */
 background-color: black;
-/* height: 100%; */
+height: 100%;
 font-family: 'Numans', sans-serif;
-}
+}*/
 
-/* .card{
+#partiles-js{
+    height: 680px;
+}
+.card{
     color: black;
-} */
-/* .container{
+} 
+ .container{
+     margin-top: auto;
 height: 100%;
 position: absolute;
 align-content: center;
-} */
+}
 
 .card{
-height:500px;
+/* height:500px; */
 margin-top: auto;
 margin-bottom: auto;
 width: fit-content;
 background-color: rgba(0,0,0) !important;
 border-radius: 4px;
+/* border:1px solid blue; */
 }
 
+.card-body{
+    height:100px;
+}
 
 .social_icon span{
 font-size: 60px;

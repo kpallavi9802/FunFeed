@@ -1,76 +1,54 @@
 <?php
+  /* Database connection start */
+  include_once("database.php");
+  $error = false;
+
+  if ($conn->connect_error) {
+    die("Connection failed :".$conn->connect_error);
+  }
   
- $msg = "";
-if(isset($_POST['submit']))
- {
- 	
- 	
- 		// $target = '../uploads/images/'.basename($_FILES['imageinput']['name']);
 
- 		// if(move_uploaded_file($_FILES['imageinput']['tmp_name'], $target))
-		// {
-		// 	$msg = "image upload sucessfully";
-    // }
-    
-    // $target = '../uploads/videos/'.basename($_FILES['videoinput']['name']);
+  #fetching the data
+//   $name1=$_FILES['file1']['name'];
+//   $name2=$_FILES['file2']['name'];
+//   $temp1=$_FILES['file1']['tmp_name'];
+//   $temp2=$_FILES['file2']['tmp_name'];
+  if(isset($_POST['submit'])){
+  $inputname = $_POST['name'];
+  $genre = $_POST['genre'];
+  $inputseason = $_POST['season'];
+  $inputepisode = $_POST['episode'];
+  $inputduration = $_POST['duration'];
+  $rating = $_POST['rating'];
+  $imdb = $_POST['imdb'];
+  
 
- 		// if(move_uploaded_file($_FILES['videoinput']['tmp_name'], $target))
-		// {
-		// 	$msg = "video upload sucessfully";
-    // }
-    
-    // include_once("database.php");
+  $target1="../uploads/images/".basename($_FILES['imageinput']['name']);
+  $target2="../uploads/videos/".basename($_FILES['videoinput']['name']);
 
- 	
-
+  $imageinput1=$_FILES['imageinput']['name'];
+  $videoinput1=$_FILES['videoinput']['name'];
 
 
+  #connection checking
+  
+    // if($_POST[''])
+    move_uploaded_file($_FILES['imageinput']['tmp_name'],$target1);
+    move_uploaded_file($_FILES['videoinput']['tmp_name'], $target2);
+    $sql = "INSERT INTO streamedvideos(name,genre,season,episode,duration,image,video) VALUES ('$inputname','$genre','$inputseason','$inputepisode','$inputduration','$imageinput1','$videoinput1')";
+    // $run = mysqli_query($conn,$stmt);
+    if($conn->query($sql) === TRUE)
+    { 
+	  echo "Submitted Successfully";
+    header("Location:../html/explore.php");
+  
 
-
-$name = $_POST['name'];
-$genre = $_POST['genre'];
-$season = $_POST['season'];
-$episode = $_POST['episode'];
-$duration = $_POST['duration'];
-
-$imageinput = $_FILES['imageinput']['name'];
-$videoinput = $_FILES['videoinput']['name'];
-
-echo $name;
-$sql = "insert into streamedvideos values ('$name','$genre','$season','$episode','$duration','$imageinput','$videoinput')";
-$result = $conn->query($sql);
-
-$target = '../uploads/images/'.basename($_FILES['imageinput']['name']);
-
- 		if(move_uploaded_file($_FILES['imageinput']['tmp_name'], $target))
-		{
-			$msg = "image upload sucessfully";
     }
-    
-    $target = '../uploads/videos/'.basename($_FILES['videoinput']['name']);
-
- 		if(move_uploaded_file($_FILES['videoinput']['tmp_name'], $target))
-		{
-			$msg = "video upload sucessfully";
+    else
+    {
+      echo "Not Submitted";
     }
+  } 
 
 
-if($result)
-{
-	header('Location: ../html/homepage.html');
-	echo ("data inserted sucessfully");
-	echo "<script>
-	alert('data inserted sucessfully ');
-	window.location.href='../html/homepage.html';
-	</script>";
-}
-
-else
-{
-	die("connection failed");
-}
- }
-
-
-$conn->close();
-?>
+?> 
